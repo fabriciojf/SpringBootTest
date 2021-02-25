@@ -1,0 +1,38 @@
+{
+    "title": "Terminal",
+    "type": "object",
+    "properties": {
+        "logic": {
+            "type": "integer"
+        },
+        "serial": {
+            "type": "string"
+        },
+        "sam": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "model": {
+            "type": "string"
+        },
+        "ptid": {
+            "type": "string"
+        },
+        "plat": {
+            "type": "integer"
+        },
+        "version": {
+            "type": "string"
+        },
+        "mxr": {
+            "type": "integer"
+        },
+        "mxf": {
+            "type": "string"
+        },
+        "VERFM": {
+            "type": "string"
+        }
+    },
+    "required": ["logic", "serial", "model", "version"]
+}
