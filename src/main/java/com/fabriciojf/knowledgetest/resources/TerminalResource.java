@@ -37,7 +37,7 @@ public class TerminalResource {
     @RequestMapping(value = "/{logic}", method = RequestMethod.GET)
     public ResponseEntity<?> getTerminalByLogic(@PathVariable int logic) {
         returnIfTerminalNotExists(logic);
-        return new ResponseEntity<>(terminalRepository.findByLogic(logic), 
+        return new ResponseEntity<Terminal>(terminalRepository.findByLogic(logic).get(), 
                 HttpStatus.OK);
     }
 

@@ -31,6 +31,8 @@ public class Terminal implements Serializable {
     @JsonProperty("VERFM")
     private String verfm;
 
+    public Terminal() {}
+    
     public void adaptJsonObject(JSONObject json) {
 
         try {
