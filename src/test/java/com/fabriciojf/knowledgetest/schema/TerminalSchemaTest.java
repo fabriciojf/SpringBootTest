@@ -8,7 +8,7 @@ public class TerminalSchemaTest {
     
     @Test
     public void testGetSchemaWithValidFile() {        
-        JsonSchema schema = new TerminalSchema();        
+        JsonBasicSchema schema = new TerminalSchema();        
         assertNotNull(schema.getSchema());
     }    
 }

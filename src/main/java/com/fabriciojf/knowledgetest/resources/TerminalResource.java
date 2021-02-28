@@ -6,6 +6,8 @@ import com.fabriciojf.knowledgetest.repository.TerminalRepository;
 import com.fabriciojf.knowledgetest.schema.TerminalSchema;
 import com.fabriciojf.knowledgetest.util.TerminalUtil;
 import com.fabriciojf.knowledgetest.validator.TerminalSchemaValidator;
+import com.google.common.base.Optional;
+import io.swagger.annotations.Api;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,15 +19,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @author Fabricio S Costa fabriciojf@gmail.com
- * @class TerminalResource
  * @since 24/02/2021
  */
 @RestController
 @RequestMapping(value = "/1.0b/terminals")
 @ResponseBody
+@EnableSwagger2
 public class TerminalResource {
 
     @Autowired
@@ -33,9 +36,9 @@ public class TerminalResource {
 
     @RequestMapping(value = "/{logic}", method = RequestMethod.GET)
     public ResponseEntity<?> getTerminalByLogic(@PathVariable int logic) {
-        terminalExists(logic);
-        Terminal terminal = terminalRepository.findByLogic(logic);
-        return new ResponseEntity<>(terminal, HttpStatus.OK);
+        returnIfTerminalNotExists(logic);
+        return new ResponseEntity<>(terminalRepository.findByLogic(logic), 
+                HttpStatus.OK);
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST,
@@ -57,8 +60,8 @@ public class TerminalResource {
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> update(@RequestBody Terminal terminal, @PathVariable int logic) {
         
-        terminalExists(logic); 
-        terminalIsValid(new JSONObject(terminal));
+        returnIfTerminalNotExists(logic); 
+        returnIfTerminalIsNotValid(new JSONObject(terminal));
         
         terminal.setLogic(logic);        
         terminalRepository.save(terminal);
@@ -66,14 +69,14 @@ public class TerminalResource {
         return new ResponseEntity<>(terminal, HttpStatus.OK);
     }
 
-    private void terminalExists(int logic) {
-        Terminal terminal = terminalRepository.findByLogic(logic);
-        if (terminal == null) {
+    private void returnIfTerminalNotExists(int logic) {
+        Optional<Terminal> terminal = terminalRepository.findByLogic(logic);
+        if (!terminal.isPresent()) {
             throw new ObjectNotFoundError("Terminal for logic " + logic + " not exists.");
         }
     }
     
-    private void terminalIsValid(JSONObject jsonTerminal) {        
+    private void returnIfTerminalIsNotValid(JSONObject jsonTerminal) {        
         new TerminalSchemaValidator(
                 jsonTerminal, new TerminalSchema()).processValidation();        
     }

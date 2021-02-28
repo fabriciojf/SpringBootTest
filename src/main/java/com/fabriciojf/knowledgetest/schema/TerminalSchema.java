@@ -7,11 +7,9 @@ import java.io.FileNotFoundException;
 
 /**
  * @author Fabricio S Costa fabriciojf@gmail.com
- * @class TerminalSchema
- * @version 1.0
  * @since 25/02/2021
  */
-public class TerminalSchema implements JsonSchema {
+public class TerminalSchema implements JsonBasicSchema {
     
     @Override
     public FileInputStream getSchema() {

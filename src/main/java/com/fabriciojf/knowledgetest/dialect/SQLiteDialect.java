@@ -10,7 +10,6 @@ import org.hibernate.type.StringType;
 
 /**
  * @author Fabricio S Costa fabriciojf@gmail.com
- * @class SQLiteDialect
  * @since 24/02/2021
  */
 public class SQLiteDialect extends Dialect {

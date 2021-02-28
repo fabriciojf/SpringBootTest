@@ -5,22 +5,21 @@ import org.everit.json.schema.Schema;
 import org.everit.json.schema.loader.SchemaLoader;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-import com.fabriciojf.knowledgetest.schema.JsonSchema;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.everit.json.schema.ValidationException;
+import com.fabriciojf.knowledgetest.schema.JsonBasicSchema;
 
 /**
  * @author Fabricio S Costa fabriciojf@gmail.com
- * @class TerminalSchemaValidator
  * @since 25/02/2021
  */
 public class TerminalSchemaValidator {
 
     private final JSONObject jsonData;
-    private final JsonSchema jsonSchema;
+    private final JsonBasicSchema jsonSchema;
 
-    public TerminalSchemaValidator(JSONObject jsonData, JsonSchema jsonSchema) {
+    public TerminalSchemaValidator(JSONObject jsonData, JsonBasicSchema jsonSchema) {
         this.jsonData = jsonData;
         this.jsonSchema = jsonSchema;
     }

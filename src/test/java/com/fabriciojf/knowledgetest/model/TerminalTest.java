@@ -28,7 +28,7 @@ public class TerminalTest {
             jsonData.put("version", "8.00b3");
             jsonData.put("mxr", 0);
             jsonData.put("mxf", "16777216");
-            jsonData.put("verfm", "PWWIN");
+            jsonData.put("VERFM", "PWWIN");
 
         } catch (JSONException ex) {
             fail("Erro ao criar o Json Object com o modelo de dados válido");

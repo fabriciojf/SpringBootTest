@@ -6,8 +6,6 @@ import org.json.JSONObject;
 
 /**
  * @author Fabricio S Costa fabriciojf@gmail.com
- * @class TerminalTool
- * @version 1.0
  * @since 25/02/2021
  */
 public class TerminalUtil {

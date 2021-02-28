@@ -4,7 +4,6 @@ import com.google.common.base.Strings;
 
 /**
  * @author Fabricio S Costa fabriciojf@gmail.com
- * @class FieldValidator
  * @since 24/02/2021
  */
 public class FieldValidator {

@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
  * @author Fabricio S Costa fabriciojf@gmail.com
- * @class ObjectNotFoundError
  * @since 25/02/2021
  */
 @ResponseStatus(HttpStatus.NOT_FOUND)

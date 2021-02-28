@@ -10,7 +10,6 @@ import org.json.JSONObject;
 
 /**
  * @author Fabricio S Costa fabriciojf@gmail.com
- * @class Terminal
  * @since 24/02/2021
  */
 @Entity
