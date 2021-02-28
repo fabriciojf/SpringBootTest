@@ -43,7 +43,7 @@ Acesse o link abaixo para entender como abrir arquivos .jar no Windows 10
 ## Documentação dos Recursos
 
 Acesse a documentação dos recursos através do link:
-[http://springboot.fabriciojf.com:3030/swagger-ui.html](http://springboot.fabriciojf.com:3030/swagger-ui.html)
+[https://fabriciojf-mux.herokuapp.com/swagger-ui.html](https://fabriciojf-mux.herokuapp.com/swagger-ui.html)
 
 ## Como testar a API através do Postman
 
@@ -51,32 +51,29 @@ Baixe e instale o Postman através do link [https://www.postman.com/](https://ww
 
 Caso você ainda não conheça o Postman, aprenda a utilizá-lo através da matéria [Como instalar e utilizar o Postman para enviar requisições HTTP](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360017143594-Como-instalar-e-utilizar-o-Postman-para-enviar-requisi%C3%A7%C3%B5es-HTTP)
 
-### Realizando uma Consulta
+### Realizando uma Consulta (GET)
 
-* GET: http://DOMAIN:3030/1.0b/terminals/:logic
-  * :logic é referente à chave do objeto Terminal que deseja cosultar
-
-ex:
-
-```console
-http://springboot.fabriciojf.com:3030/1.0b/terminals/44332211
-```
+| Requisição | **GET** |
+| URI | http://fabriciojf-mx.herokuapp.com/1.0b/terminals/LOGIC |
+| LOGIC | chave do objeto Terminal que deseja cosultar |
 
 ### Realizando um Post
 
-* POST: http://DOMAIN:3030/1.0b/terminals
-* Modelo do Json aguardado através do Body
+| Requisição | **POST** |
+| URI | http://fabriciojf-mx.herokuapp.com/1.0b/terminals
+
+Modelo do Json aguardado através do Body
 
 ```json
 {
   "VERFM": "string",
-  "logic": int,
+  "logic": 0,
   "model": "string",
   "mxf": "string",
-  "mxr": int,
-  "plat": int,
+  "mxr": 0,
+  "plat": 0,
   "ptid": "string",
-  "sam": int,
+  "sam": 0,
   "serial": "string",
   "version": "string"
 }
@@ -84,20 +81,21 @@ http://springboot.fabriciojf.com:3030/1.0b/terminals/44332211
 
 ### Realizando um Put
 
-* PUT: http://DOMAIN:3030/1.0b/terminals/:logic  
-  * :logic é referente à chave do objeto Terminal que deseja atualizar
-* Modelo do Json aguardado através do Body
+| Requisição | **PUT** |
+| URI | http://fabriciojf-mx.herokuapp.com/1.0b/terminals/LOGIC |
+| LOGIC | chave do objeto Terminal que deseja atualizar |
+
+Modelo do Json aguardado através do Body
 
 ```json
 {
   "VERFM": "string",
-  "logic": int,
   "model": "string",
   "mxf": "string",
-  "mxr": int,
-  "plat": int,
+  "mxr": 0,
+  "plat": 0,
   "ptid": "string",
-  "sam": int,
+  "sam": 0,
   "serial": "string",
   "version": "string"
 }
@@ -106,5 +104,5 @@ http://springboot.fabriciojf.com:3030/1.0b/terminals/44332211
 
 Fabrício S Costa - fabriciojf@gmail.com
 
-[![Linkedin: fabriciojf](https://img.shields.io/badge/-Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fabricioscosta/)](https://www.linkedin.com/in/fabricioscosta/)
-[![Site: fabriciojf](https://img.shields.io/badge/-PersonalSite-blue?style=flat-square&logo=wordpress&logoColor=white&link=https://fabriciojf.com)](https://fabriciojf.com)
+* [Linkedin: fabriciojf](https://www.linkedin.com/in/fabricioscosta/)
+* [Site: fabriciojf](https://fabriciojf.com)
