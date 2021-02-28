@@ -43,13 +43,20 @@ Acesse o link abaixo para entender como abrir arquivos .jar no Windows 10
 ## Documentação dos Recursos
 
 Acesse a documentação dos recursos através do link:
-[https://fabriciojf-mux.herokuapp.com/swagger-ui.html](https://fabriciojf-mx.herokuapp.com/swagger-ui.html)
+
+* [https://fabriciojf-mux.herokuapp.com/swagger-ui.html](https://fabriciojf-mx.herokuapp.com/swagger-ui.html)
+
 
 ## Como testar a API através do Postman
 
-Baixe e instale o Postman através do link [https://www.postman.com/](https://www.postman.com/).
+Baixe e instale o Postman através do link:
 
-Caso você ainda não conheça o Postman, aprenda a utilizá-lo através da matéria [Como instalar e utilizar o Postman para enviar requisições HTTP](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360017143594-Como-instalar-e-utilizar-o-Postman-para-enviar-requisi%C3%A7%C3%B5es-HTTP)
+* [https://www.postman.com/](https://www.postman.com/). 
+
+Caso você ainda não conheça o Postman, aprenda a utilizá-lo através da matéria:
+
+* [Como instalar e utilizar o Postman para enviar requisições HTTP](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/360017143594-Como-instalar-e-utilizar-o-Postman-para-enviar-requisi%C3%A7%C3%B5es-HTTP)
+
 
 ### Realizando uma Consulta (GET)
 
@@ -57,6 +64,7 @@ Caso você ainda não conheça o Postman, aprenda a utilizá-lo através da mat�
 | --- | --- |
 | URI | http://fabriciojf-mx.herokuapp.com/1.0b/terminals/LOGIC |
 | LOGIC | chave do objeto Terminal que deseja cosultar |
+
 
 ### Realizando um Post
 
