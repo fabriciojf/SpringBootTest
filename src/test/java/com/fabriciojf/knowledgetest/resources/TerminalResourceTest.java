@@ -35,19 +35,17 @@ public class TerminalResourceTest {
     private TerminalRepository terminalRepository;
     
     @Test
-    public void testGetTerminalByLogicNotFound() throws Exception {
+    public void testGetTerminalByLogicObjectNotFound() throws Exception {
         
-        when(terminalRepository.findByLogic(11)).thenReturn(
-                Optional.of(new Terminal()));
+        when(terminalRepository.findByLogic(11)).thenReturn(Optional.absent());
         
         mockMvc
                 .perform(get("/1.0b/terminals/11"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("not found")));
+                .andExpect(status().isNotFound());
     }
     
     @Test
-    public void testGetTerminalByLogicWithValidObject() throws Exception {
+    public void testGetTerminalByLogicWithExistingObject() throws Exception {
         
         Terminal terminal = getTerminal();
         Optional<Terminal> terminalMock = Optional.of(terminal);
@@ -93,7 +91,7 @@ public class TerminalResourceTest {
                 .perform(post("/1.0b/terminals")
                     .contentType(MediaType.APPLICATION_JSON)
                     .characterEncoding("utf-8")
-                    .content(objectMapper.writeValueAsString(terminal)))
+                    .content(objectMapper.writeValueAsString(getTerminal())))
                 .andExpect(status().isNotFound());
     }
         
