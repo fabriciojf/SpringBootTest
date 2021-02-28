@@ -43,7 +43,7 @@ Acesse o link abaixo para entender como abrir arquivos .jar no Windows 10
 ## Documentação dos Recursos
 
 Acesse a documentação dos recursos através do link:
-[https://fabriciojf-mux.herokuapp.com/swagger-ui.html](https://fabriciojf-mux.herokuapp.com/swagger-ui.html)
+[https://fabriciojf-mux.herokuapp.com/swagger-ui.html](https://fabriciojf-mx.herokuapp.com/swagger-ui.html)
 
 ## Como testar a API através do Postman
 
@@ -54,13 +54,15 @@ Caso você ainda não conheça o Postman, aprenda a utilizá-lo através da mat�
 ### Realizando uma Consulta (GET)
 
 | Requisição | **GET** |
+| --- | --- |
 | URI | http://fabriciojf-mx.herokuapp.com/1.0b/terminals/LOGIC |
 | LOGIC | chave do objeto Terminal que deseja cosultar |
 
 ### Realizando um Post
 
 | Requisição | **POST** |
-| URI | http://fabriciojf-mx.herokuapp.com/1.0b/terminals
+| --- | --- |
+| URI | http://fabriciojf-mx.herokuapp.com/1.0b/terminals |
 
 Modelo do Json aguardado através do Body
 
@@ -82,6 +84,7 @@ Modelo do Json aguardado através do Body
 ### Realizando um Put
 
 | Requisição | **PUT** |
+| --- | --- |
 | URI | http://fabriciojf-mx.herokuapp.com/1.0b/terminals/LOGIC |
 | LOGIC | chave do objeto Terminal que deseja atualizar |
 
@@ -99,6 +102,7 @@ Modelo do Json aguardado através do Body
   "serial": "string",
   "version": "string"
 }
+```
 
 ### Author
 
