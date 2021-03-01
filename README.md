@@ -47,6 +47,14 @@ Acesse a documentação dos recursos através do link:
 * [https://fabriciojf-mx.herokuapp.com/swagger-ui.html](https://fabriciojf-mx.herokuapp.com/swagger-ui.html)
 
 
+## Autenticação
+
+| Autenticação | Basic Authentication|
+| --- | --- |
+| User | admin |
+| Password | spr1n6b00t |
+
+
 ## Como testar a API através do Postman
 
 Baixe e instale o Postman através do link:
@@ -71,6 +79,7 @@ Caso você ainda não conheça o Postman, aprenda a utilizá-lo através da mat�
 | --- | --- |
 | URI | http://fabriciojf-mx.herokuapp.com/1.0b/terminals |
 | Entrada | Linha no modelo CSV separada por ; (ponto e vírgula) | 
+| Regra Básica | Não deve aceitar entradas Json |
 
 Modelo de entrada aguardado através do Body
 
@@ -119,6 +128,11 @@ Modelo do Json aguardado através do Body
   "version": "string"
 }
 ```
+
+### Delete
+
+* Não deve aceitar a ação **Deletar**
+
 
 ### Author
 
