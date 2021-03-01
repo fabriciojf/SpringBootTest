@@ -7,7 +7,7 @@ import com.fabriciojf.knowledgetest.schema.TerminalSchema;
 import com.fabriciojf.knowledgetest.util.TerminalUtil;
 import com.fabriciojf.knowledgetest.validator.TerminalSchemaValidator;
 import com.google.common.base.Optional;
-import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -43,6 +43,8 @@ public class TerminalResource {
 
     @RequestMapping(value = "/", method = RequestMethod.POST,
             consumes = MediaType.TEXT_HTML_VALUE)
+    @ApiOperation(value = "Inserção de objetos no modelo Terminal",
+            notes = "Json não aceitável, modelo de entrada: 44332211;123;PWWIN;0;F04A2E4088B;4;8.00b3;0;16777216;PWWIN")
     public ResponseEntity<?> insert(@RequestBody String terminalData) {
         
         JSONObject jsonData = new TerminalUtil(terminalData).adaptCsvLineToJson();
